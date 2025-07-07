@@ -60,4 +60,60 @@ public class Varias {
         };
         return numero;
     }
+
+    /**
+     * Ejercicio 4
+     * Dada una base y un exponentente, nos devuelve la potencia
+     * @param base
+     * @param exponente
+     * @return
+     */
+    public static long potencia(int base, int exponente){
+        //Si el exponente es 0, siempre devolvemos 1
+        if (exponente == 0){
+            return 1;
+        }
+
+        //En el caso de que exponente sea negativo, llamamaos a esta funcion
+        //de manera recursiva
+        if (exponente < 0){
+            return 1 / potencia(base, -exponente);
+        }
+
+        //Inicializamos n como acumulador en 1, para poder multiplicar
+        //en cada una de las iteraciones del ciclo.
+        int n = 1;
+        for (int i = 0; i < Math.abs(exponente); i++){
+            n = n * base;
+        }
+
+        return n;
+        
+    }
+    /**
+     * Ejercicio 5
+     * Devuelve como un numero entero, la cantiad de digitos del
+     * numero ingresado
+     * @param numero numero ingresado
+     * @return cantidad de digitos
+     */
+    public static int digitos(int numero){
+        //Si el numero es negativo, lo convertimos a positivo
+        if(numero < 0){
+            numero = -numero;
+        }
+
+        if (numero == 0){
+            //retornamos un 1 cuando numero es 0
+            //ya que no podemos dividir por 0
+            return 1;
+        } else {
+            int n = 0;
+            while (numero > 0){
+                numero = numero / 10; // Le quita 1 digito a numero
+                n++; //incrementa la cantidad de digitos
+            }
+            return n;
+        }
+    }
 }
