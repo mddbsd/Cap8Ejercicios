@@ -45,4 +45,19 @@ public class Varias {
         }
         return true;
     }
+    /**
+     * Ejercicio 3
+     * Devuelve el siguiente numero primo del numero ingresado
+     * @param numero numero ingresado
+     * @return
+     */
+    public static int siguientePrimro(int numero){
+        //++numero, incrementa el numero antes de enviarlo a la funcion
+        //para que no devuelva el mismo numero inicial en el caso de que este sea primo
+        while(!esPrimo(++numero)){
+            //No ejecutamos nada dentro del bucle, simplemente
+            //incrementamos el valor de numero en los argumentos de la funcion
+        };
+        return numero;
+    }
 }
