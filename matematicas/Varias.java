@@ -23,7 +23,26 @@ public class Varias {
             return true;
         } else {
             return false;
+        }    
+    }
+    /**
+     * Los numeros primos son aquellos numeros que solo son divisibles por si mismos
+     * y por 1. Tomamos el numero inicial, y vamos didiviendo por todos sus numeros
+     * anteriores. Si el modulo de alguna de estas divicios, nos da 0, entonces
+     * el numero ya no es primo
+     * @param numero numero inicial
+     * @return verdadero cuando es primo, falso cuano no es
+     */
+    public static boolean esPrimo(int numero){
+        if (numero < 2){
+            return false;
+        } else {
+            for (int i = numero / 2; i >= 2; i--){
+                if (numero % i == 0){
+                    return false;
+                }
+            }
         }
-        
+        return true;
     }
 }
